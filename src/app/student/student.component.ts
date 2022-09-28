@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { student } from './student';
+import { Student } from './student';
 import { StudentService } from './student.service';
+
 @Component({
   selector: 'app-student',
-  templateUrl: 'student.component.html',
-  styleUrls: ['student.component.css'],
+  templateUrl: './student.component.html',
+  styleUrls: ['./student.component.css'],
 })
 export class StudentComponent implements OnInit {
   students = [];
-  model = new student();
+  model = new Student();
   constructor(private studentService: StudentService) {}
+
   ngOnInit() {
     this.getAllStudents();
   }
@@ -29,17 +31,20 @@ export class StudentComponent implements OnInit {
     });
   }
   addStudent() {
+    alert(JSON.stringify(this.model));
     if (!this.model.id) {
+      alert(JSON.stringify(this.model));
       this.studentService.createStudentService(this.model).subscribe((data) => {
         this.getAllStudents();
-        this.model = new student();
+        this.model = new Student();
       });
     } else {
+      alert(JSON.stringify(this.model));
       this.studentService
         .updateStudentService(this.model.id, this.model)
         .subscribe((data) => {
           this.getAllStudents();
-          this.model = new student();
+          this.model = new Student();
         });
     }
   }

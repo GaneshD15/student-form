@@ -1,12 +1,12 @@
-export class student {
+export class Student {
   id: number;
   firstname: string;
   lastname: string;
   email: string;
-  dob: string;
+  dob: Date;
   gender: string;
   qualification: string;
-  language: string;
+  language: boolean;
   constructor(values: Object = {}) {
     Object.assign(this, values);
   }
