@@ -30,6 +30,7 @@ export class StudentComponent implements OnInit {
       this.getAllStudents();
     });
   }
+
   addStudent() {
     alert(JSON.stringify(this.model));
     if (!this.model.id) {
