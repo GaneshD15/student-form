@@ -15,6 +15,6 @@ import { ProductComponent } from './product/product.component';
     StudentComponent,
     ProductComponent,
   ],
-  bootstrap: [StudentComponent, ProductComponent],
+  bootstrap: [StudentComponent],
 })
 export class AppModule {}
