@@ -30,6 +30,9 @@ export class StudentComponent implements OnInit {
       this.getAllStudents();
     });
   }
+  clearForm() {
+    (<HTMLFormElement>document.getElementById('Login')).reset();
+  }
 
   addStudent() {
     alert(JSON.stringify(this.model));
